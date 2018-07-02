@@ -1,0 +1,84 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1JI-is-GaK"; */
+"1JI-is-GaK.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "完了"; ObjectID = "2EM-Pq-Wdc"; */
+"2EM-Pq-Wdc.title" = "完了";
+
+/* Class = "UITabBarItem"; title = "毎日のメニュー"; ObjectID = "2Ji-Uh-HRq"; */
+"2Ji-Uh-HRq.title" = "毎日のメニュー";
+
+/* Class = "UIButton"; normalTitle = "注文"; ObjectID = "4d1-Eq-Jnh"; */
+"4d1-Eq-Jnh.normalTitle" = "注文";
+
+/* Class = "UILabel"; text = "予想到着時間"; ObjectID = "4rR-v1-9LE"; */
+"4rR-v1-9LE.text" = "予想到着時間";
+
+/* Class = "UINavigationItem"; title = "基本情報"; ObjectID = "9Ln-bv-slQ"; */
+"9Ln-bv-slQ.title" = "基本情報";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CSV-Un-VPk"; */
+"CSV-Un-VPk.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "D6N-At-YNp"; */
+"D6N-At-YNp.text" = "Label";
+
+/* Class = "UILabel"; text = "注文の記録はありません"; ObjectID = "Mh3-KS-Soh"; */
+"Mh3-KS-Soh.text" = "注文の記録はありません";
+
+/* Class = "UINavigationItem"; title = "ランチプラン"; ObjectID = "RvZ-1G-VFU"; */
+"RvZ-1G-VFU.title" = "ランチプラン";
+
+/* Class = "UILabel"; text = "未設定"; ObjectID = "XFE-Z7-uBp"; */
+"XFE-Z7-uBp.text" = "未設定";
+
+/* Class = "UIBarButtonItem"; title = "キャンセル"; ObjectID = "XYl-71-fzP"; */
+"XYl-71-fzP.title" = "キャンセル";
+
+/* Class = "UILabel"; text = "12:30PM"; ObjectID = "c58-ek-dI8"; */
+"c58-ek-dI8.text" = "12:30PM";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "dIz-BZ-EPI"; */
+"dIz-BZ-EPI.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "注文"; ObjectID = "dmf-xz-Rmq"; */
+"dmf-xz-Rmq.title" = "注文";
+
+/* Class = "UIBarButtonItem"; title = "キャンセル"; ObjectID = "eFE-kc-iKE"; */
+"eFE-kc-iKE.title" = "キャンセル";
+
+/* Class = "UIButton"; normalTitle = "配達員に連絡"; ObjectID = "ir2-dY-lRF"; */
+"ir2-dY-lRF.normalTitle" = "配達員に連絡";
+
+/* Class = "UILabel"; text = "注文の記録はありません"; ObjectID = "krI-jp-Jjq"; */
+"krI-jp-Jjq.text" = "注文の記録はありません";
+
+/* Class = "UITabBarItem"; title = "ユーザー設定"; ObjectID = "sQr-Us-obz"; */
+"sQr-Us-obz.title" = "ユーザー設定";
+
+/* Class = "UITabBarItem"; title = "本日のメニュー"; ObjectID = "sXj-gd-sAn"; */
+"sXj-gd-sAn.title" = "本日のメニュー";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "syf-j8-zSb"; */
+"syf-j8-zSb.text" = "Label";
+
+/* Class = "UILabel"; text = "注文を承りました"; ObjectID = "t8m-Ia-eOY"; */
+"t8m-Ia-eOY.text" = "注文を承りました";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "u9g-DD-7f0"; */
+"u9g-DD-7f0.text" = "Title";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "wD2-f9-EQi"; */
+"wD2-f9-EQi.text" = "Subtitle";
+
+/* Class = "UIBarButtonItem"; title = "完了"; ObjectID = "x8W-BD-YD4"; */
+"x8W-BD-YD4.title" = "完了";
+
+/* Class = "UIButton"; normalTitle = "今すぐ注文！"; ObjectID = "xSS-QU-NnS"; */
+"xSS-QU-NnS.normalTitle" = "今すぐ注文！";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xhl-iG-Fog"; */
+"xhl-iG-Fog.text" = "Label";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "xpA-Yf-0qg"; */
+"xpA-Yf-0qg.text" = "Title";

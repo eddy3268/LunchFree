@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="4352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="250" id="KGk-i7-Jjw" customClass="UserProfilePicTableViewCell" customModule="LunchFree" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="UserProfilePicTableViewCell" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePicSample" translatesAutoresizingMaskIntoConstraints="NO" id="E4P-kI-udG">
+                        <rect key="frame" x="85" y="41" width="150" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="kFM-bs-Jb6"/>
+                            <constraint firstAttribute="width" constant="150" id="xT0-vc-2x3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAA-2O-Hpb">
+                        <rect key="frame" x="81" y="207" width="158" height="22.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwo-Wo-usd">
+                        <rect key="frame" x="185" y="41" width="50" height="50"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="R3p-DH-agz"/>
+                            <constraint firstAttribute="width" constant="50" id="XRe-ag-yOL"/>
+                            <constraint firstAttribute="height" constant="50" id="jBe-zL-AAC"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="vlK-0G-AF7"/>
+                        </constraints>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <state key="normal" image="editIcon"/>
+                        <connections>
+                            <action selector="editProfilePic:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XVE-IR-zbB"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="E4P-kI-udG" firstAttribute="trailing" secondItem="cwo-Wo-usd" secondAttribute="trailing" id="C7v-iD-KI0"/>
+                    <constraint firstItem="HAA-2O-Hpb" firstAttribute="centerX" secondItem="E4P-kI-udG" secondAttribute="centerX" id="PdJ-DS-Idm"/>
+                    <constraint firstItem="E4P-kI-udG" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="VA0-yQ-rtG"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="HAA-2O-Hpb" secondAttribute="bottom" constant="9.5" id="chb-Ty-5BE"/>
+                    <constraint firstItem="HAA-2O-Hpb" firstAttribute="top" secondItem="E4P-kI-udG" secondAttribute="bottom" constant="16" id="fPl-9r-vSr"/>
+                    <constraint firstItem="HAA-2O-Hpb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="65" id="hNJ-uj-edh"/>
+                    <constraint firstItem="E4P-kI-udG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="30" id="iEY-co-iOs"/>
+                    <constraint firstItem="E4P-kI-udG" firstAttribute="top" secondItem="cwo-Wo-usd" secondAttribute="top" id="yG2-i4-Cor"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="lAI-IA-m8Y"/>
+            <connections>
+                <outlet property="editProfilePicButton" destination="cwo-Wo-usd" id="9cJ-CA-goW"/>
+                <outlet property="profilePicView" destination="E4P-kI-udG" id="5Ei-nY-Roc"/>
+                <outlet property="userNameLabel" destination="HAA-2O-Hpb" id="GQ0-8o-aZ8"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="-24"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="editIcon" width="25" height="25"/>
+        <image name="profilePicSample" width="552" height="552"/>
+    </resources>
+</document>
