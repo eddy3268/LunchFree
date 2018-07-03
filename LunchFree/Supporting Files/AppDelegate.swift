@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        TWTRTwitter.sharedInstance().start(withConsumerKey:"rj5V6oxWHvDChWsjpl3PS2kkJ", consumerSecret:"S20J5x2KFj3I3fNLl1WTze5gUYGbodf3gmCrBbTivoN6mKb7KQ")
+        TWTRTwitter.sharedInstance().start(withConsumerKey:"", consumerSecret:"")
         
         return true
     }
