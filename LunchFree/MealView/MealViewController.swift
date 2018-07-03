@@ -11,7 +11,7 @@
 //
 //  LunchFreeのメイン画面。
 //  ユーザーは2タップだけで日替わりのおすすめランチセットを注文することができる。
-//  MVCパターンになっていなくて、コードが分かりづらくても申し訳ございません...次のタスクとしてまとめます。
+//  MVCパターンになっていなくて、リファクタリングもしなくて、コードが分かりづらくても申し訳ございません...次のタスクとしてまとめます。
 //
 
 import UIKit
@@ -109,7 +109,7 @@ class MealViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     
-    // Trying to moving the selected cell to the center to indicatet the selected option
+    // Trying to moving the selected cell to the center to indicate the selected option
 //    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
 //
 //        let totalCellWidth = 250 * dataList.count
