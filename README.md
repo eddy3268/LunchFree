@@ -15,6 +15,10 @@ Note: launching the app requires to register google API key, facebook app id and
 
 How to register the keys: https://firebase.google.com/docs/auth/ios/firebaseui
 
+Also add the consumer secret and consumer key in AppDelegate for twitter login.
+
+```TWTRTwitter.sharedInstance().start(withConsumerKey:"yourKeyHere", consumerSecret:"yourSecretHere")```
+
 開発中。
 ユーザーがアプリを起動することができ、UIを操作することができる。
 また、Firebase AuthenticationとFirebase Cloud Firestore (Beta)により、ログイン機能とクラウドにユーザーが登録した情報を保存する機能を実装した。
@@ -22,6 +26,10 @@ How to register the keys: https://firebase.google.com/docs/auth/ios/firebaseui
 注：アプリを成功に起動させるには、先にgoogle API keyと、facebook app idと、twitter app idをinfo.plistに登録することが必要となります。秘密情報であるため、このリポジトリにはそういった情報を載せていません。
 
 登録方法: https://firebase.google.com/docs/auth/ios/firebaseui?hl=ja
+
+Twitterログイン機能を利用するには、さらにAppDelegateでconsumer secretとconsumer keyを登録することが必要。
+
+```TWTRTwitter.sharedInstance().start(withConsumerKey:"yourKeyHere", consumerSecret:"yourSecretHere")```
 
 ## Project Screen Shot(s)　スクリーンショット
 Upload later...
