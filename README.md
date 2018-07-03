@@ -12,6 +12,7 @@ MVCの構造パターンとリファクタリングをしていなくて、若�
 In deveopment. Users can launch the app and interacting with the visual element on the UI. Also, it has login and data storage function which is using Firebase Authentication and Firebase Cloud Firestore (Beta) service.
 
 Note: launching the app requires to register google API key, facebook app id and twitter app id on info.plist first.
+
 How to register the keys: https://firebase.google.com/docs/auth/ios/firebaseui
 
 開発中。
@@ -19,7 +20,8 @@ How to register the keys: https://firebase.google.com/docs/auth/ios/firebaseui
 また、Firebase AuthenticationとFirebase Cloud Firestore (Beta)により、ログイン機能とクラウドにユーザーが登録した情報を保存する機能を実装した。
 
 注：アプリを成功に起動させるには、先にgoogle API keyと、facebook app idと、twitter app idをinfo.plistに登録することが必要となります。秘密情報であるため、このリポジトリにはそういった情報を載せていません。
-登録方法；https://firebase.google.com/docs/auth/ios/firebaseui?hl=ja
+
+登録方法: https://firebase.google.com/docs/auth/ios/firebaseui?hl=ja
 
 ## Project Screen Shot(s)　スクリーンショット
 Upload later...
