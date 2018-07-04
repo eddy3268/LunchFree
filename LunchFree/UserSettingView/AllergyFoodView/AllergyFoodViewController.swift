@@ -195,9 +195,24 @@ class AllergyFoodViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func completeAddingAllergyFood(_ sender: UIBarButtonItem) {
         self.view.endEditing(true)
-        // TODO: write to the database
+        // save the favFood data to database
+        if allergyFood != nil {
+            let newAllergyFood: [String:Any] = [
+                // def new fav food
+                "AllergyFood": allergyFood!
+            ]
+            
+            // save the data to the path
+            docRef.setData(newAllergyFood, merge: true, completion: { (error) in
+                if let error = error {
+                    print ("Oh no! Got an error: \(error.localizedDescription)")
+                } else {
+                    print ("User data has been saved")
+                }
+            })
+        }
         
-        // set unwind segue
+        // perform unwind segue
         performSegue(withIdentifier: "finishingEditingAllergyFood", sender: self)
         
     }

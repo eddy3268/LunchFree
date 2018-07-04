@@ -245,7 +245,6 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //TODO: set all the items launch destinated segue
         
         // When the datepicker is expanding and the selected row is under the datepicker
         if datePickerIndexPath != nil && datePickerIndexPath!.row + 1 == indexPath.row  {
@@ -269,6 +268,7 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
             
             case "profileSettingItem":
                 // set the behavior of the setting item cell based on the title
+                // TODO: set all the items launch destinated segue
                 if userProfileCellData[indexPath.row].title == "基本情報" {
                     performSegue(withIdentifier: "showPersonalInfo", sender: self)
                 }

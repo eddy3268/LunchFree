@@ -41,16 +41,11 @@ class ProfileEditingViewController: UITableViewController, UITextFieldDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userProfileSettingCellItemList = [userProfileSettingCellItem(cellType:"textEnterCell" ,title: "お名前", textFieldPlaceHolder: "お名前をカタカナかローマ字で入力してください"),
-                                          userProfileSettingCellItem(cellType:"numberEnterCell" ,title: "年齢", textFieldPlaceHolder: "数字で入力してください"),
-                                          userProfileSettingCellItem(cellType:"dataSelectionCell" ,title: "性別", textFieldPlaceHolder: ""),
-                                          userProfileSettingCellItem(cellType:"textEnterCell" ,title: "メールアドレス", textFieldPlaceHolder: "メールアドレス入力してください")]
-        
         // [START get the uid]
         let auth = Auth.auth()
         if let currentUser = auth.currentUser {
             let uid = currentUser.uid
-        // [END get the uid]
+            // [END get the uid]
             //[START fetching user data]
             docRef = Firestore.firestore().collection("users").document("\(uid)")
             docRef.getDocument { (docSnapshot, error) in
@@ -63,6 +58,15 @@ class ProfileEditingViewController: UITableViewController, UITextFieldDelegate, 
             }
         }
         //[END fetching user data]
+        
+        // FIXME: The placeholder is set in the first load even there is data in the database
+        // Maybe beacuse I 
+        userProfileSettingCellItemList = [userProfileSettingCellItem(cellType:"textEnterCell" ,title: "お名前", textFieldPlaceHolder: "お名前をカタカナかローマ字で入力してください"),
+                                          userProfileSettingCellItem(cellType:"numberEnterCell" ,title: "年齢", textFieldPlaceHolder: "数字で入力してください"),
+                                          userProfileSettingCellItem(cellType:"dataSelectionCell" ,title: "性別", textFieldPlaceHolder: ""),
+                                          userProfileSettingCellItem(cellType:"textEnterCell" ,title: "メールアドレス", textFieldPlaceHolder: "メールアドレス入力してください")]
+        
+
     }
     
     // MARK: tableView
@@ -255,6 +259,8 @@ class ProfileEditingViewController: UITableViewController, UITextFieldDelegate, 
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        // TODO: add the situation when user tap the cell under the picker when it is expanding.
+        
         if dataPickerIndexPath != nil && dataPickerIndexPath!.row == indexPath.row {
             
             var parentIndexPath = IndexPath(row: indexPath.row - 1, section: indexPath.section)
@@ -270,6 +276,18 @@ class ProfileEditingViewController: UITableViewController, UITextFieldDelegate, 
                 tableView.deselectRow(at: parentIndexPath, animated: true)
             }
             
+        } else if dataPickerIndexPath != nil && dataPickerIndexPath!.row + 1 == indexPath.row {
+            
+            
+            switch userProfileSettingCellItemList[indexPath.row - 1].cellType {
+            case "textEnterCell":
+                collapseDataPicker()
+                tableView.deselectRow(at: indexPath, animated: true)
+                
+            default:
+                collapseDataPicker()
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
         } else {
             switch userProfileSettingCellItemList[indexPath.row].cellType {
             case "textEnterCell":
@@ -324,7 +342,7 @@ class ProfileEditingViewController: UITableViewController, UITextFieldDelegate, 
         self.view.endEditing(true)
         
         if userName != nil || sex != nil || age != nil || email != nil {
-            // save new user data to firebase
+            // def new user data
             let newUserData: [String:Any] = [
                 "userName": userName!,
                 "sex": sex!,

@@ -111,7 +111,6 @@ class FavFoodViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func setupInputComponents () {
-        
         // add a seperator to the textField bar
         let topBorderView = UIView()
         topBorderView.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
@@ -196,9 +195,25 @@ class FavFoodViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func completeAddingFavFood(_ sender: UIBarButtonItem) {
         self.view.endEditing(true)
-        // TODO: write to the database
         
-        // set unwind segue
+        // save the favFood data to database
+        if favFood != nil {
+            let newFavFood: [String:Any] = [
+                // def new fav food
+                "favFood": favFood!
+            ]
+            
+            // save the data to the path
+            docRef.setData(newFavFood, merge: true, completion: { (error) in
+                if let error = error {
+                    print ("Oh no! Got an error: \(error.localizedDescription)")
+                } else {
+                    print ("User data has been saved")
+                }
+            })
+        }
+        
+        // perform unwind segue
         performSegue(withIdentifier: "finishingEditingFavFood", sender: self)
     }
     

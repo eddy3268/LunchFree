@@ -324,8 +324,8 @@
 		222C655A20EA57EE002C281D /* ProfileEditingView */ = {
 			isa = PBXGroup;
 			children = (
-				227AFC481F63D97C00297D09 /* ProfileEditingTableViewCell.swift */,
 				227AFC461F62C0B400297D09 /* ProfileEditingViewController.swift */,
+				227AFC481F63D97C00297D09 /* ProfileEditingTableViewCell.swift */,
 				226B5E311F78D357004E13A5 /* DataPickerCell.swift */,
 				227AFC4A1F66DD1200297D09 /* DataSelectionCell.swift */,
 			);
