@@ -80,6 +80,7 @@ class FavFoodViewController: UIViewController, UITableViewDelegate, UITableViewD
                 guard let docSnapshot = docSnapshot, docSnapshot.exists else { return }
                 let userData = docSnapshot.data()
                 self.favFood = userData!["favFood"] as? [String] ?? [""] // the default value when there is no data makes the first empty row!!! But if I dun give a default value [""] I can't make a new line
+                self.favFoodTableView.reloadData()
             }
         }
         //[END fetching user data]
