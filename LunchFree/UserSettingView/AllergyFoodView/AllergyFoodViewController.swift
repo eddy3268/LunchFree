@@ -79,6 +79,7 @@ class AllergyFoodViewController: UIViewController, UITableViewDelegate, UITableV
                 guard let docSnapshot = docSnapshot, docSnapshot.exists else { return }
                 let userData = docSnapshot.data()
                 self.allergyFood = userData!["allergyFood"] as? [String] ?? [""] // the default value when there is no data makes the first empty row!!! But if I dun give a default value [""] I can't make a new line
+                // Must reload data inside the closure
                 self.allergyFoodTableView.reloadData()
             }
         }

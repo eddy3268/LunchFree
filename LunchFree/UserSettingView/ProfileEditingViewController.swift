@@ -55,6 +55,8 @@ class ProfileEditingViewController: UITableViewController, UITextFieldDelegate, 
                 self.age = userData!["age"] as? String ?? ""
                 self.sex = userData!["sex"] as? String ?? ""
                 self.email = userData!["email"] as? String ?? ""
+                // Must reload data inside the closure
+                self.tableView.reloadData()
             }
         }
         //[END fetching user data]
@@ -63,7 +65,7 @@ class ProfileEditingViewController: UITableViewController, UITextFieldDelegate, 
         // Maybe beacuse I 
         userProfileSettingCellItemList = [userProfileSettingCellItem(cellType:"textEnterCell" ,title: "お名前", textFieldPlaceHolder: "お名前をカタカナかローマ字で入力してください"),
                                           userProfileSettingCellItem(cellType:"numberEnterCell" ,title: "年齢", textFieldPlaceHolder: "数字で入力してください"),
-                                          userProfileSettingCellItem(cellType:"dataSelectionCell" ,title: "性別", textFieldPlaceHolder: ""),
+                                          userProfileSettingCellItem(cellType:"dataSelectionCell" ,title: "性別", textFieldPlaceHolder: "こちらをタップして設定してください"),
                                           userProfileSettingCellItem(cellType:"textEnterCell" ,title: "メールアドレス", textFieldPlaceHolder: "メールアドレス入力してください")]
         
 
@@ -134,13 +136,17 @@ class ProfileEditingViewController: UITableViewController, UITextFieldDelegate, 
                 cell.profileEditingItemTextField.tag = indexPath.row
                 
                 cell.profileEditingItemTitle.text = userProfileSettingCellItemList[indexPath.row - 1].title
-                cell.profileEditingItemTextField.placeholder = userProfileSettingCellItemList[indexPath.row - 1].textFieldPlaceHolder
                 
-                // configure the keyboard
-                if userProfileSettingCellItemList[indexPath.row - 1].title == "メールアドレス" {
+                // set switch statement with title and set the data from database
+                switch userProfileSettingCellItemList[indexPath.row - 1].title {
+                case "メールアドレス":
                     cell.profileEditingItemTextField.keyboardType = .emailAddress
-                } else {
-                    cell.profileEditingItemTextField.keyboardType = .namePhonePad
+                    if self.email != nil && self.email != "" {
+                        cell.profileEditingItemTextField.text = self.email
+                    }
+                    
+                default:
+                    cell.profileEditingItemTextField.placeholder = userProfileSettingCellItemList[indexPath.row - 1].textFieldPlaceHolder
                 }
                 
                 cell.profileEditingItemTextField.autocorrectionType = .no
@@ -187,19 +193,22 @@ class ProfileEditingViewController: UITableViewController, UITextFieldDelegate, 
                 // display info on the cell
                 cell.profileEditingItemTitle.text = userProfileSettingCellItemList[indexPath.row].title
                 cell.profileEditingItemTextField.tag = indexPath.row
-                if self.userName != nil {
-                    cell.profileEditingItemTextField.placeholder = self.userName
-                    cell.profileEditingItemTextField.textColor = .black
-                } else {
-                    cell.profileEditingItemTextField.placeholder = userProfileSettingCellItemList[indexPath.row].textFieldPlaceHolder
-                }
                 
-                
-                // configure the keyboard
-                if userProfileSettingCellItemList[indexPath.row].title == "メールアドレス" {
-                    cell.profileEditingItemTextField.keyboardType = .emailAddress
-                } else {
+                // set switch statement with title and set the data from database
+                switch userProfileSettingCellItemList[indexPath.row].title {
+                case "お名前":
                     cell.profileEditingItemTextField.keyboardType = .namePhonePad
+                    if self.userName != nil && self.userName != "" {
+                        cell.profileEditingItemTextField.text = self.userName
+                    }
+                case "メールアドレス":
+                    cell.profileEditingItemTextField.keyboardType = .emailAddress
+                    if self.email != nil && self.email != "" {
+                        cell.profileEditingItemTextField.text = self.email
+                    }
+                    
+                default:
+                    cell.profileEditingItemTextField.placeholder = userProfileSettingCellItemList[indexPath.row].textFieldPlaceHolder
                 }
                 
                 cell.profileEditingItemTextField.autocorrectionType = .no
@@ -215,8 +224,18 @@ class ProfileEditingViewController: UITableViewController, UITextFieldDelegate, 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "userProfileSettingCell", for: indexPath) as! ProfileEditingTableViewCell
                 cell.profileEditingItemTextField.tag = indexPath.row
                 cell.profileEditingItemTitle.text = userProfileSettingCellItemList[indexPath.row].title
-                cell.profileEditingItemTextField.placeholder = userProfileSettingCellItemList[indexPath.row].textFieldPlaceHolder
                 cell.profileEditingItemTextField.keyboardType = .numberPad
+                
+                // set the data when there is saved data
+                switch userProfileSettingCellItemList[indexPath.row].title {
+                case "年齢":
+                    if self.age != nil &&  self.age != "" {
+                        cell.profileEditingItemTextField.text = self.age
+                    }
+                    
+                default:
+                    cell.profileEditingItemTextField.placeholder = userProfileSettingCellItemList[indexPath.row].textFieldPlaceHolder
+                }
                 
                 // Create a toolbar for the num pad
                 let toolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
@@ -238,7 +257,13 @@ class ProfileEditingViewController: UITableViewController, UITextFieldDelegate, 
                 let dataSelectionCell = tableView.dequeueReusableCell(withIdentifier: "dataSelectionCell", for: indexPath) as! DataSelectionCell
                 
                 dataSelectionCell.title.text = userProfileSettingCellItemList[indexPath.row].title
-                dataSelectionCell.detail.text = userProfileSettingCellItemList[indexPath.row].textFieldPlaceHolder
+                
+                if self.sex != nil && self.sex != "" {
+                    dataSelectionCell.detail.text = self.sex
+                    dataSelectionCell.detail.textColor = .black
+                } else {
+                    dataSelectionCell.detail.text = userProfileSettingCellItemList[indexPath.row].textFieldPlaceHolder
+                }
                 
                 return dataSelectionCell
                 
