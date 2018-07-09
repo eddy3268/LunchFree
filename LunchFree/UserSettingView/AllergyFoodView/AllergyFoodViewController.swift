@@ -145,7 +145,7 @@ class AllergyFoodViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if allergyFood != nil {
+        if allergyFood != nil && allergyFood != [""] {
             tableView.separatorStyle = .singleLine
             tableView.backgroundView = nil
             

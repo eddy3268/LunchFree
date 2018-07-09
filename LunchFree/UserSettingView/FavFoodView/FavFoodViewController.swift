@@ -144,7 +144,8 @@ class FavFoodViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if favFood != nil {
+        
+        if favFood != nil && favFood != [""] {
             tableView.separatorStyle = .singleLine
             tableView.backgroundView = nil
             
