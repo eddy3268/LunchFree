@@ -40,7 +40,7 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
     
     //[START def user data]
     var userName: String!
-    var email: String!
+    var selectedPlanName: String!
     //[END def user data]
 
     // Row Height
@@ -74,6 +74,7 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
             guard let docSnapshot = docSnapshot, docSnapshot.exists else { return }
             let userData = docSnapshot.data()
             self.userName = userData!["userName"] as? String ?? ""
+            self.selectedPlanName = userData!["selectedPlanName"] as? String ?? ""
             // TODO: fetch other data and set it as the initial status when it's loaded
         }
         
@@ -83,12 +84,13 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // If the user changed the user name
+        // If the user changed the data
         //[START updating user data]
         userDataListener = docRef.addSnapshotListener { (docSnapshot, error) in
             guard let docSnapshot = docSnapshot, docSnapshot.exists else { return }
             let userData = docSnapshot.data()
             self.userName = userData!["userName"] as? String ?? ""
+            self.selectedPlanName = userData!["selectedPlanName"] as? String ?? ""
             self.tableView.reloadData()
         }
         //[END updating user data]
@@ -179,10 +181,12 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
                 cell.title.text = userProfileCellData[indexPath.row].title
                 
                 // display the time from the saved data.
-                if userProfileCellData[indexPath.row].detail != nil {
-                    cell.detail.text = userProfileCellData[indexPath.row].detail
-                } else {
-                    cell.detail.text = "未設定"
+                if userProfileCellData[indexPath.row].title == "ランチプラン" {
+                    if selectedPlanName != nil && selectedPlanName != "" {
+                        cell.detail.text = selectedPlanName
+                    } else {
+                        cell.detail.text = "未設定"
+                    }
                 }
                 
                 return cell

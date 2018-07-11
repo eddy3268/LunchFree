@@ -22,9 +22,9 @@ class ProfileEditingViewController: UITableViewController, UITextFieldDelegate, 
     
     var dataPickerIndexPath: IndexPath?
     
-    //[START def firebase database]
+    //[START def firestore database]
     var docRef: DocumentReference!
-    //[END def firebase database]
+    //[END def firestore database]
     
     //[START def user data]
     var userName: String?
@@ -67,8 +67,6 @@ class ProfileEditingViewController: UITableViewController, UITextFieldDelegate, 
                                           userProfileSettingCellItem(cellType:"numberEnterCell" ,title: "年齢", textFieldPlaceHolder: "数字で入力してください"),
                                           userProfileSettingCellItem(cellType:"dataSelectionCell" ,title: "性別", textFieldPlaceHolder: "こちらをタップして設定してください"),
                                           userProfileSettingCellItem(cellType:"textEnterCell" ,title: "メールアドレス", textFieldPlaceHolder: "メールアドレス入力してください")]
-        
-
     }
     
     // MARK: tableView

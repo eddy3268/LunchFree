@@ -108,7 +108,6 @@ class MealViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
     
-    
     // Trying to moving the selected cell to the center to indicate the selected option
 //    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
 //
@@ -173,7 +172,6 @@ class MealViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: action after signin
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
-        
         // if the user is a new user, then create a profile in the database and save the user id, user name and email address.
         // It doesn't necessary to do this but doing this can reducce the time to call the Firebase Auth for user info.
         // and it also better to organize user info in one database with other info and preferences.
@@ -187,7 +185,6 @@ class MealViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 "userName": userName!,
                 "email": email!,
                 ]
-            
             // writing data to cloud Firestore
             // creating a document ref path with the name of the user id
             docRef = Firestore.firestore().collection("users").document("\(uid)")

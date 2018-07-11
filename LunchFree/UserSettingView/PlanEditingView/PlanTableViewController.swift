@@ -9,12 +9,12 @@
 //  ランチセットのサブスクリプションプラン設定画面
 
 import UIKit
+import Firebase
 
 struct lunchOption {
     let lunchName: String!
     let price: String!
 }
-
 
 // TODO: inplement cloud firestore here and save the data to the database
 class PlanTableViewController: UITableViewController {
@@ -22,6 +22,10 @@ class PlanTableViewController: UITableViewController {
     //[START def user data]
     var selectedPlanName: String?
     //[END def user data]
+    
+    //[START def firestore database]
+    var docRef: DocumentReference!
+    //[END def firestore database]
     
     var lunchPlanData = [lunchOption]()
     
@@ -34,15 +38,24 @@ class PlanTableViewController: UITableViewController {
                          lunchOption(lunchName: "ベジタリアン", price: "40000円/20食"),
                          lunchOption(lunchName: "ビーガン", price: "40000円/20食")]
         
-        
-        
-        // Uncomment the following line to preserve selection between presentations. Comment it out when debugging
-         self.clearsSelectionOnViewWillAppear = false
-        
+        // [START get the uid]
+        let auth = Auth.auth()
+        if let currentUser = auth.currentUser {
+            let uid = currentUser.uid
+            // [END get the uid]
+            //[START fetching user data]
+            docRef = Firestore.firestore().collection("users").document("\(uid)")
+            docRef.getDocument { (docSnapshot, error) in
+                guard let docSnapshot = docSnapshot, docSnapshot.exists else { return }
+                let userData = docSnapshot.data()
+                self.selectedPlanName = userData!["selectedPlanName"] as? String ?? ""
+                // Must reload data inside the closure
+                self.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -59,9 +72,10 @@ class PlanTableViewController: UITableViewController {
         cell.selectionStyle = .none
         
         // if the user chose a plan before, preselect the plan to display the plan selection of user
-        if selectedPlanName != nil && selectedPlanName == lunchPlanData[indexPath.row].lunchName {
+        // FIXME: the option is not pre-selected when it is first loaded.
+        // FIXME: the option is still selected when the user select another option
+        if selectedPlanName == lunchPlanData[indexPath.row].lunchName {
             cell.accessoryType = .checkmark
-            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .top)
         }
         
         return cell
@@ -109,6 +123,22 @@ class PlanTableViewController: UITableViewController {
                 print("Cancel button pressed")
         }))
         changePlanActionSheet.addAction(UIAlertAction(title: "変更する", style: .default, handler: {(UIAlertAction) in
+            
+            if self.selectedPlanName != nil {
+                // def new user data
+                let newSelectedPlan: [String:Any] = [
+                    "selectedPlanName": self.selectedPlanName!
+                ]
+                
+                // save the data to the path
+                self.docRef.setData(newSelectedPlan, merge: true, completion: { (error) in
+                    if let error = error {
+                        print ("Oh no! Got an error: \(error.localizedDescription)")
+                    } else {
+                        print ("User data has been saved!")
+                    }
+                })
+            }
             
             self.performSegue(withIdentifier: "finishChoosingPlan", sender: self)
         }))
