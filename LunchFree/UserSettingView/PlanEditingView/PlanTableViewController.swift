@@ -53,6 +53,8 @@ class PlanTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        clearsSelectionOnViewWillAppear = false
     }
 
     // MARK: - Table view data source
@@ -72,7 +74,6 @@ class PlanTableViewController: UITableViewController {
         cell.selectionStyle = .none
         
         // if the user chose a plan before, preselect the plan to display the plan selection of user
-        // FIXME: the option is not pre-selected when it is first loaded.
         // FIXME: the option is still selected when the user select another option
         if selectedPlanName == lunchPlanData[indexPath.row].lunchName {
             cell.accessoryType = .checkmark
