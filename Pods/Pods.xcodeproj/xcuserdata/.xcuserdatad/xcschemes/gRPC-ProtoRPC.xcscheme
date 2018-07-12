@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C65DF776DB355C1BB911B7DF475DC423"
+               BlueprintIdentifier = "FBB104EEF4E5C81D900B79C9993E1238"
                BlueprintName = "gRPC-ProtoRPC"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "gRPC-ProtoRPC.framework">

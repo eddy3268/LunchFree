@@ -41,6 +41,8 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
     //[START def user data]
     var userName: String!
     var selectedPlanName: String!
+    // Have to set the property like this because it is in conflict with the setter of datepicker
+    var lunchTimeData: String!
     //[END def user data]
 
     // Row Height
@@ -75,6 +77,7 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
             let userData = docSnapshot.data()
             self.userName = userData!["userName"] as? String ?? ""
             self.selectedPlanName = userData!["selectedPlanName"] as? String ?? ""
+            self.lunchTimeData = userData!["lunchTime"] as? String ?? ""
             // TODO: fetch other data and set it as the initial status when it's loaded
         }
         
@@ -91,6 +94,7 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
             let userData = docSnapshot.data()
             self.userName = userData!["userName"] as? String ?? ""
             self.selectedPlanName = userData!["selectedPlanName"] as? String ?? ""
+            self.lunchTimeData = userData!["lunchTime"] as? String ?? ""
             self.tableView.reloadData()
         }
         //[END updating user data]
@@ -120,8 +124,8 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
             
             let parentData = userProfileCellData[indexPath.row - 1]
             // load the user preference here. Will change it to loading from data base
-            if parentData.title == "ランチタイム" && parentData.detail != nil {
-                datePicker.setDate(dateFormatter.date(from: parentData.detail!)!, animated: true)
+            if parentData.title == "ランチタイム" && lunchTimeData != "" {
+                datePicker.setDate(dateFormatter.date(from: lunchTimeData)!, animated: true)
             } else {
                 datePicker.setDate(dateFormatter.date(from: "11:00")!, animated: false)
             }
@@ -184,6 +188,14 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
                 if userProfileCellData[indexPath.row].title == "ランチプラン" {
                     if selectedPlanName != nil && selectedPlanName != "" {
                         cell.detail.text = selectedPlanName
+                    } else {
+                        cell.detail.text = "未設定"
+                    }
+                }
+                
+                if userProfileCellData[indexPath.row].title == "ランチタイム" {
+                    if lunchTimeData != nil && lunchTimeData != "" {
+                        cell.detail.text = lunchTimeData
                     } else {
                         cell.detail.text = "未設定"
                     }
@@ -340,13 +352,24 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
     
     // set the detail label on the lunch time item when the user selected a time
     @IBAction func setLunchTime(_ sender: UIDatePicker) {
-        let parentIndexPath = IndexPath(row: datePickerIndexPath!.row - 1, section: 0)
+        let parentIndexPathRow = datePickerIndexPath!.row - 1
         // change model
         dateFormatter.dateFormat = "HH:mm"
-        userProfileCellData[parentIndexPath.row].detail = dateFormatter.string(from: sender.date)
+        lunchTimeData = dateFormatter.string(from: sender.date)
+        userProfileCellData[parentIndexPathRow].detail = lunchTimeData
+        // save the user lunch time setting to cloud firestore
+        let newLunchTimeData: [String: Any] = [
+            "lunchTime": lunchTimeData
+        ]
+        docRef.setData(newLunchTimeData, merge: true, completion: { (error) in
+            if let error = error {
+                print ("Oh no! Got an error: \(error.localizedDescription)")
+            } else {
+                print ("User data has been saved")
+            }
+        })
         tableView.reloadData()
         
-        // TODO: save the user lunch time setting to cloud firestore
     }
     
     // MARK: Edit profile action
