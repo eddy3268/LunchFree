@@ -15,7 +15,6 @@ import Firebase
 struct cellData {
     let cellID: String!
     var title: String!
-    var detail: String?
     var image: UIImage?
 }
 
@@ -56,12 +55,12 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
         super.viewDidLoad()
         
         // item data
-        userProfileCellData = [cellData(cellID: "profilePicSection", title: nil, detail: nil, image: #imageLiteral(resourceName: "profilePicSample")),
-                               cellData(cellID: "profileSettingItem", title: "基本情報", detail: nil, image: #imageLiteral(resourceName: "basicInfoIcon")),
-                               cellData(cellID: "settingItemWithDetail", title: "ランチプラン", detail: nil, image: #imageLiteral(resourceName: "jpyIcon")),
-                               cellData(cellID: "profileSettingItem", title: "好きな食べ物", detail: nil, image: #imageLiteral(resourceName: "favoriteFoodIcon")),
-                               cellData(cellID: "profileSettingItem", title: "アレルギー", detail: nil, image: #imageLiteral(resourceName: "allergyFoodIcon")),
-                               cellData(cellID: "settingItemWithDetail", title: "ランチタイム", detail: nil, image: #imageLiteral(resourceName: "lunchTimeIcon"))]
+        userProfileCellData = [cellData(cellID: "profilePicSection", title: nil, image: #imageLiteral(resourceName: "profilePicSample")),
+                               cellData(cellID: "profileSettingItem", title: "基本情報", image: #imageLiteral(resourceName: "basicInfoIcon")),
+                               cellData(cellID: "settingItemWithDetail", title: "ランチプラン", image: #imageLiteral(resourceName: "jpyIcon")),
+                               cellData(cellID: "profileSettingItem", title: "好きな食べ物",  image: #imageLiteral(resourceName: "favoriteFoodIcon")),
+                               cellData(cellID: "profileSettingItem", title: "アレルギー", image: #imageLiteral(resourceName: "allergyFoodIcon")),
+                               cellData(cellID: "settingItemWithDetail", title: "ランチタイム", image: #imageLiteral(resourceName: "lunchTimeIcon"))]
 //                               cellData(cellID: "lunchCalendarItem", title: "ランチカレンダー", detail: nil, image: #imageLiteral(resourceName: "calendarIcon"))]
         
         // [START get the uid]
@@ -194,7 +193,7 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
                 }
                 
                 if userProfileCellData[indexPath.row].title == "ランチタイム" {
-                    if lunchTimeData != nil && lunchTimeData != "" {
+                    if lunchTimeData != "" {
                         cell.detail.text = lunchTimeData
                     } else {
                         cell.detail.text = "未設定"
@@ -352,11 +351,12 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
     
     // set the detail label on the lunch time item when the user selected a time
     @IBAction func setLunchTime(_ sender: UIDatePicker) {
-        let parentIndexPathRow = datePickerIndexPath!.row - 1
+        let parentIndexPath = IndexPath (row: datePickerIndexPath!.row - 1, section: 0)
         // change model
         dateFormatter.dateFormat = "HH:mm"
         lunchTimeData = dateFormatter.string(from: sender.date)
-        userProfileCellData[parentIndexPathRow].detail = lunchTimeData
+        let cell = tableView.dequeueReusableCell(withIdentifier: "profileSettingWithDetailCell", for: parentIndexPath) as! profileSettingWithDetailCell
+        cell.detail.text = lunchTimeData
         // save the user lunch time setting to cloud firestore
         let newLunchTimeData: [String: Any] = [
             "lunchTime": lunchTimeData
@@ -416,7 +416,7 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
         // receive the user option from planVC
         // update the model
         // TODO: see if it is possible to dynamic change the array number
-        userProfileCellData[2].detail = planVC.selectedPlanName
+        lunchTimeData = planVC.selectedPlanName
         tableView.reloadData()
     }
     
@@ -445,8 +445,8 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
             // TODO: Delete it when made the plan table view controller to fetch data from the database
             if let navVC = segue.destination as? UINavigationController {
                 let planVC = navVC.viewControllers[0] as! PlanTableViewController
-                if userProfileCellData[2].detail != nil {
-                    planVC.selectedPlanName = userProfileCellData[2].detail
+                if lunchTimeData != "" {
+                    planVC.selectedPlanName = lunchTimeData
                 }
             }
         }
