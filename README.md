@@ -42,7 +42,7 @@ Clone repository and open the LunchFree.xcworkspace file with the newest version
 リポジトリをクローンして、最新版のXcodeでLunchFree.xcworkspaceを開く。
 
 ## Reflection　プロジェクトの由来
-This is my very first iOS app project in my journey of iOS app development learning starting from July 2017. Project goals included using personal app deveopment skill training, experiment technology and familiarizing myself with the iOS native app development in general.
+This is my very first iOS app project in my journey of iOS app development learning. Project goals included using personal app deveopment skill training, experiment technology and familiarizing myself with the iOS native app development in general.
 
 Originally I wanted to build an app that allowed office workers to order their lunch daily with the least effort for choosing their lunch and allowed them to pick it up at a destinated time at the entrance of the office building. However, I abandon the project due to business concern and now it becomes my personal project for learning, practicing and experimenting iOS native app development.
 
@@ -54,7 +54,7 @@ I will keep contributing to the development of this app. I will really appreciat
 
 Thank you.
 
-こちらのプロジェクトは、私の最初のiOSネイティブアプリ開発プロジェクトです。2017年7月からiOSネイティブアプリ開発の勉強を始めて、このreadmeを書く時点で約1年を経ちました。
+こちらのプロジェクトは、私の最初のiOSネイティブアプリ開発プロジェクトです。
 
 このプロジェクトはもともと、オフィスワーカーのランチ問題を解決するためのサービスを立ち上げるために開発したアプリですが、ビジネスの考慮により、サービスの立ち上げが中止になってしまい、今私の個人のスキルアップ、テクノロジーの実験用のプロジェクトになっています。
 
