@@ -9,7 +9,7 @@ Learning and Research only.
 MVCの構造パターンとリファクタリングをしていなくて、若干読みづらくて申し訳ございません。
 
 ## Screenshot & video
-![Lunchfree](https://i.imgur.com/f3e0GmH.png "サンプル")
+<img src="https://i.imgur.com/f3e0GmH.png" alt="drawing" width="50%" height="50%"/>
 
 video: https://www.youtube.com/watch?v=HLBglrB-VsY
 
