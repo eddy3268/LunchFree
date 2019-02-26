@@ -9,7 +9,7 @@ Learning and Research only.
 MVCの構造パターンとリファクタリングをしていなくて、若干読みづらくて申し訳ございません。
 
 ## Screenshot
-<img src="https://www.dropbox.com/s/ugx2wqen3c5ojfx/Screen%20Shot%202018-07-04%20at%2022.21.26.png">
+<img src="https://www.dropbox.com/s/v0nv76wxdcg2nzb/Screen%20Shot%202018-07-04%20at%2022.26.14.jpg">
 
 
 ## Project Status 進捗状況
