@@ -9,8 +9,7 @@ Learning and Research only.
 MVCの構造パターンとリファクタリングをしていなくて、若干読みづらくて申し訳ございません。
 
 ## Screenshot
-![(http://i.imgur.com/Jjwsc.jpg)
-
+![エビフライトライアングル](http://i.imgur.com/Jjwsc.jpg "サンプル")
 
 ## Project Status 進捗状況
 In deveopment. It has login and data storage function which is using Firebase Authentication and Firebase Cloud Firestore (Beta) service.
