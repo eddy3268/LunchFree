@@ -9,8 +9,9 @@ Learning and Research only.
 MVCの構造パターンとリファクタリングをしていなくて、若干読みづらくて申し訳ございません。
 
 ## Screenshot & video
-<img src="https://i.imgur.com/f3e0GmH.png" alt="drawing" width="50%" height="50%"/>
-<img src="https://previews.dropbox.com/p/thumb/AAUwjAWbCyRTAULCAV-x8sbu-TjEcB6t_Z-wjtC8_g3-Bs4ngQytBtSlbxkLZiJEvFClIm78G-2zWpocMZ5D-va4OLH8n9KRaRftnKX_xGotYpLzLgzXAM8-hT8gZ4B63k4XnxuO5TcYcXUGr0q0THfVf4E-CPPa9u7gj8dwfxH8FVLN5jvczRL78gdclfyi7zZ_DDClvUBZ7R6VcK8ZEBVjcxzxzNERXFaLWcdxbbDoEw/p.jpeg" alt="drawing" width="50%" height="50%"/>
+<img src="https://i.imgur.com/f3e0GmH.png" width="50%" height="50%"/>
+<img src="https://i.imgur.com/F7yUOYWr.png" width="50%" height="50%"/>
+<img src="https://i.imgur.com/xyaZ9Zo.png" width="50%" height="50%"/>
 
 video: https://www.youtube.com/watch?v=HLBglrB-VsY
 
