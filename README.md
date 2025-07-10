@@ -16,7 +16,7 @@ MVCの構造パターンとリファクタリングをしていなくて、若�
 video: https://www.youtube.com/watch?v=HLBglrB-VsY
 
 ## Project Status 進捗状況
-In deveopment. It has login and data storage function which is using Firebase Authentication and Firebase Cloud Firestore (Beta) service.
+In development. It has login and data storage function which is using Firebase Authentication and Firebase Cloud Firestore (Beta) service.
 
 Note: launching the app requires to register google API key, facebook app id and twitter app id on info.plist first.
 
@@ -43,7 +43,7 @@ Clone repository and open the LunchFree.xcworkspace file with the newest version
 リポジトリをクローンして、最新版のXcodeでLunchFree.xcworkspaceを開く。
 
 ## Reflection　プロジェクトの由来
-This is my very first iOS app project in my journey of iOS app development learning. Project goals included using personal app deveopment skill training, experiment technology and familiarizing myself with the iOS native app development in general.
+This is my very first iOS app project in my journey of iOS app development learning. Project goals included using personal app development skill training, experiment technology and familiarizing myself with the iOS native app development in general.
 
 I will keep contributing to the development of this app. I will really appreciate if you comment your opinion after reading my code.
 
