@@ -10,8 +10,8 @@ import UIKit
 
 extension UIView {
     
-    // enable the symbol format language of contraint
-    func addContraintsWithFormat(_ format: String, views: UIView...) {
+    // enable the symbol format language of constraint.
+    func addConstraintsWithFormat(_ format: String, views: UIView...) {
         var viewDict = [String: UIView]()
         
         for (index, view) in views.enumerated() {

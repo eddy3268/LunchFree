@@ -127,8 +127,8 @@ class OrderViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     private func setupMenuBar() {
         view.addSubview(menuBar)
-        view.addContraintsWithFormat("H:|[v0]|", views: menuBar)
-        view.addContraintsWithFormat("V:|[v0(60)]|", views: menuBar)
+        view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
+        view.addConstraintsWithFormat("V:|[v0(60)]|", views: menuBar)
     }
     
     /*

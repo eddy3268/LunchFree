@@ -103,8 +103,8 @@ class FavFoodViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func setupInputContainerView () {
         view.addSubview(favFoodInputContainerView)
-        view.addContraintsWithFormat("H:|[v0]|", views: favFoodInputContainerView)
-        view.addContraintsWithFormat("V:[v0(48)]", views: favFoodInputContainerView)
+        view.addConstraintsWithFormat("H:|[v0]|", views: favFoodInputContainerView)
+        view.addConstraintsWithFormat("V:[v0(48)]", views: favFoodInputContainerView)
         bottomConstraint = NSLayoutConstraint(item: favFoodInputContainerView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
         view.addConstraint(bottomConstraint!)
         
@@ -121,12 +121,12 @@ class FavFoodViewController: UIViewController, UITableViewDelegate, UITableViewD
         favFoodInputContainerView.addSubview(addButton)
         favFoodInputContainerView.addSubview(topBorderView)
         
-        favFoodInputContainerView.addContraintsWithFormat("H:|-16-[v0][v1(60)]|", views: inputTextField, addButton)
-        favFoodInputContainerView.addContraintsWithFormat("V:|[v0]|", views: inputTextField)
-        favFoodInputContainerView.addContraintsWithFormat("V:|[v0]|", views: addButton)
+        favFoodInputContainerView.addConstraintsWithFormat("H:|-16-[v0][v1(60)]|", views: inputTextField, addButton)
+        favFoodInputContainerView.addConstraintsWithFormat("V:|[v0]|", views: inputTextField)
+        favFoodInputContainerView.addConstraintsWithFormat("V:|[v0]|", views: addButton)
 
-        favFoodInputContainerView.addContraintsWithFormat("H:|[v0]|", views: topBorderView)
-        favFoodInputContainerView.addContraintsWithFormat("V:|[v0(0.5)]", views: topBorderView)
+        favFoodInputContainerView.addConstraintsWithFormat("H:|[v0]|", views: topBorderView)
+        favFoodInputContainerView.addConstraintsWithFormat("V:|[v0(0.5)]", views: topBorderView)
     }
     
     // handling the action when the keyboard pops out
