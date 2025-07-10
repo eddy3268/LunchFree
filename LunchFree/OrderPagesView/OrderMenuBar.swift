@@ -38,9 +38,9 @@ class OrderMenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         // add the view of the collection view in specific position
         addSubview(collectionView)
         // add 0px space from the left edge. [v0] refer to the element that you want to add
-        addContraintsWithFormat("H:|[v0]|", views: collectionView)
+        addConstraintsWithFormat("H:|[v0]|", views: collectionView)
         // add 10px space from the top edge
-        addContraintsWithFormat("V:|-10-[v0]|", views: collectionView)
+        addConstraintsWithFormat("V:|-10-[v0]|", views: collectionView)
         
         // preselect the tag when the page init
         let selectIndexPath = IndexPath(item: 0, section: 0)
@@ -137,8 +137,8 @@ class MenuCell: UICollectionViewCell {
         backgroundColor = UIColor.white
         
         addSubview(tagLabel)
-        addContraintsWithFormat("H:[v0(\(375/2))]", views: tagLabel)
-        addContraintsWithFormat("V:[v0(50)]", views: tagLabel)
+        addConstraintsWithFormat("H:[v0(\(375/2))]", views: tagLabel)
+        addConstraintsWithFormat("V:[v0(50)]", views: tagLabel)
         
         // postion the cell in the center of the collection view
         addConstraint(NSLayoutConstraint(item: tagLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))

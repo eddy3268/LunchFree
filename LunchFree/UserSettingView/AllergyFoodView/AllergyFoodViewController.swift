@@ -103,8 +103,8 @@ class AllergyFoodViewController: UIViewController, UITableViewDelegate, UITableV
     
     func setupInputContainerView () {
         view.addSubview(allergyFoodInputContainerView)
-        view.addContraintsWithFormat("H:|[v0]|", views: allergyFoodInputContainerView)
-        view.addContraintsWithFormat("V:[v0(48)]", views: allergyFoodInputContainerView)
+        view.addConstraintsWithFormat("H:|[v0]|", views: allergyFoodInputContainerView)
+        view.addConstraintsWithFormat("V:[v0(48)]", views: allergyFoodInputContainerView)
         bottomConstraint = NSLayoutConstraint(item: allergyFoodInputContainerView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
         view.addConstraint(bottomConstraint!)
         
@@ -122,12 +122,12 @@ class AllergyFoodViewController: UIViewController, UITableViewDelegate, UITableV
         allergyFoodInputContainerView.addSubview(addButton)
         allergyFoodInputContainerView.addSubview(topBorderView)
         
-        allergyFoodInputContainerView.addContraintsWithFormat("H:|-16-[v0][v1(60)]|", views: inputTextField, addButton)
-        allergyFoodInputContainerView.addContraintsWithFormat("V:|[v0]|", views: inputTextField)
-        allergyFoodInputContainerView.addContraintsWithFormat("V:|[v0]|", views: addButton)
+        allergyFoodInputContainerView.addConstraintsWithFormat("H:|-16-[v0][v1(60)]|", views: inputTextField, addButton)
+        allergyFoodInputContainerView.addConstraintsWithFormat("V:|[v0]|", views: inputTextField)
+        allergyFoodInputContainerView.addConstraintsWithFormat("V:|[v0]|", views: addButton)
         
-        allergyFoodInputContainerView.addContraintsWithFormat("H:|[v0]|", views: topBorderView)
-        allergyFoodInputContainerView.addContraintsWithFormat("V:|[v0(0.5)]", views: topBorderView)
+        allergyFoodInputContainerView.addConstraintsWithFormat("H:|[v0]|", views: topBorderView)
+        allergyFoodInputContainerView.addConstraintsWithFormat("V:|[v0(0.5)]", views: topBorderView)
     }
     
     // handling the action when the keyboard pops out
