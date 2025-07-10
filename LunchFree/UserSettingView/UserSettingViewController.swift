@@ -416,7 +416,7 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
         // receive the user option from planVC
         // update the model
         // TODO: see if it is possible to dynamic change the array number
-        lunchTimeData = planVC.selectedPlanName
+        selectedPlanName = planVC.selectedPlanName
         tableView.reloadData()
     }
     
@@ -445,8 +445,8 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
             // TODO: Delete it when made the plan table view controller to fetch data from the database
             if let navVC = segue.destination as? UINavigationController {
                 let planVC = navVC.viewControllers[0] as! PlanTableViewController
-                if lunchTimeData != "" {
-                    planVC.selectedPlanName = lunchTimeData
+                if selectedPlanName != "" {
+                    planVC.selectedPlanName = selectedPlanName
                 }
             }
         }

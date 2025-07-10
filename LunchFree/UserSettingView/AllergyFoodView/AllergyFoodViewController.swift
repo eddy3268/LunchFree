@@ -197,11 +197,11 @@ class AllergyFoodViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func completeAddingAllergyFood(_ sender: UIBarButtonItem) {
         self.view.endEditing(true)
-        // save the favFood data to database
+        // save the allergyFood data to database
         if allergyFood != nil {
             let newAllergyFood: [String:Any] = [
-                // def new fav food
-                "AllergyFood": allergyFood!
+                // def new allergy food
+                "allergyFood": allergyFood!
             ]
             
             // save the data to the path
