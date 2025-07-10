@@ -19,3 +19,7 @@ target 'LunchFree' do
   pod 'MaterialComponents/ShadowElevations'
 
 end
+
+target 'LunchFreeTests' do
+  inherit! :search_paths
+end
