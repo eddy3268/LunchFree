@@ -103,12 +103,20 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell", for: indexPath) as! SearchResultTableViewCell
-        
-        cell.lunchSetImageView.image = dataList[indexPath.row].image
-        cell.restaurantNameLabel.text = dataList[indexPath.row].restaurantName
-        cell.lunchSetNameLabel.text = dataList[indexPath.row].lunchSetName
-        
+
+        let currentData: restaurantlunchData
+        if searchController.isActive && searchController.searchBar.text != "" {
+            currentData = searchResults[indexPath.row]
+        } else {
+            currentData = dataList[indexPath.row]
+        }
+
+        cell.lunchSetImageView.image = currentData.image
+        cell.restaurantNameLabel.text = currentData.restaurantName
+        cell.lunchSetNameLabel.text = currentData.lunchSetName
+
         return cell
     }
     
