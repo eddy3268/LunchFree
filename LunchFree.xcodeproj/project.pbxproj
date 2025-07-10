@@ -36,8 +36,10 @@
 		228CB2A81F9C8AA900203D16 /* FavFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228CB2A71F9C8AA900203D16 /* FavFoodViewController.swift */; };
 		2295A6BC1F4ED48400447209 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2295A6BB1F4ED48400447209 /* OrderViewController.swift */; };
 		229CABD31F5D74BA0075549E /* OrderMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229CABD21F5D74BA0075549E /* OrderMenuBar.swift */; };
-		22C59EB11F795B1A00912528 /* PlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C59EB01F795B1A00912528 /* PlanTableViewController.swift */; };
-		5F17E0ADB1F9DF12119DE198 /* Pods_LunchFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F2F7431FFB4DF025F28A8C /* Pods_LunchFree.framework */; };
+                22C59EB11F795B1A00912528 /* PlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C59EB01F795B1A00912528 /* PlanTableViewController.swift */; };
+                5F17E0ADB1F9DF12119DE198 /* Pods_LunchFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F2F7431FFB4DF025F28A8C /* Pods_LunchFree.framework */; };
+                9351E94A00D64F8CB605B785 /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75607D5A62BE4357A21AB0CA /* SearchViewControllerTests.swift */; };
+                556677C3795D4C54A3222B69 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 329DA9C40DE444EDA7991E76 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,8 +240,9 @@
 		222E30672053D1AE00CE2C42 /* MaterialComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MaterialComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2241C4831F5D4D940021DDE2 /* LunchOptionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchOptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		22433F831F55CDF4008FDA41 /* PastOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastOrderViewController.swift; sourceTree = "<group>"; };
-		2257603B1F335DC800875CDC /* LunchFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunchFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2257603E1F335DC800875CDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+                2257603B1F335DC800875CDC /* LunchFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunchFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
+                A511C618483441EF94284333 /* LunchFreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LunchFreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+                2257603E1F335DC800875CDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		225760401F335DC800875CDC /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		225760421F335DC800875CDC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		225760451F335DC800875CDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -263,19 +266,30 @@
 		22C59EB01F795B1A00912528 /* PlanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTableViewController.swift; sourceTree = "<group>"; };
 		92669C6E078100A9145BAF34 /* Pods-LunchFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchFree.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LunchFree/Pods-LunchFree.debug.xcconfig"; sourceTree = "<group>"; };
 		A1F2F7431FFB4DF025F28A8C /* Pods_LunchFree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LunchFree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB71A98B63E254F0210C9123 /* Pods-LunchFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchFree.release.xcconfig"; path = "Pods/Target Support Files/Pods-LunchFree/Pods-LunchFree.release.xcconfig"; sourceTree = "<group>"; };
+                FB71A98B63E254F0210C9123 /* Pods-LunchFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchFree.release.xcconfig"; path = "Pods/Target Support Files/Pods-LunchFree/Pods-LunchFree.release.xcconfig"; sourceTree = "<group>"; };
+                75607D5A62BE4357A21AB0CA /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
+                329DA9C40DE444EDA7991E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		225760381F335DC800875CDC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				221ADCAA1F385EB70094884E /* MapKit.framework in Frameworks */,
-				5F17E0ADB1F9DF12119DE198 /* Pods_LunchFree.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+                225760381F335DC800875CDC /* Frameworks */ = {
+                        isa = PBXFrameworksBuildPhase;
+                        buildActionMask = 2147483647;
+                        files = (
+                                221ADCAA1F385EB70094884E /* MapKit.framework in Frameworks */,
+                                5F17E0ADB1F9DF12119DE198 /* Pods_LunchFree.framework in Frameworks */,
+                        );
+                        runOnlyForDeploymentPostprocessing = 0;
+                };
+                FAA5C1C8E47E4C328AA021FA /* Frameworks */ = {
+                        isa = PBXFrameworksBuildPhase;
+                        buildActionMask = 2147483647;
+                        files = (
+                                221ADCAA1F385EB70094884E /* MapKit.framework in Frameworks */,
+                                5F17E0ADB1F9DF12119DE198 /* Pods_LunchFree.framework in Frameworks */,
+                        );
+                        runOnlyForDeploymentPostprocessing = 0;
+                };
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -380,37 +394,48 @@
 			path = OrderPagesView;
 			sourceTree = "<group>";
 		};
-		222C656220EA5ADD002C281D /* UserSettingTableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				22012D991F5AF92E00FE9214 /* LunchCalendarTableViewCell.swift */,
-				221898B51F3440DC00A89F91 /* UserProfilePicTableViewCell.swift */,
-				221898B61F3440DC00A89F91 /* UserProfilePicTableViewCell.xib */,
-				221898B91F34458400A89F91 /* UserProfileItemTableViewCell.swift */,
-				221898BA1F34458400A89F91 /* UserProfileItemTableViewCell.xib */,
-				221ADCB51F3994300094884E /* profileSettingWithDetailCell.swift */,
-			);
-			path = UserSettingTableViewCells;
-			sourceTree = "<group>";
-		};
-		225760321F335DC800875CDC = {
-			isa = PBXGroup;
-			children = (
-				2257603D1F335DC800875CDC /* LunchFree */,
-				2257603C1F335DC800875CDC /* Products */,
-				221ADCA81F385EB70094884E /* Frameworks */,
-				954D154ED726A713C6AD5991 /* Pods */,
-			);
-			sourceTree = "<group>";
-		};
-		2257603C1F335DC800875CDC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2257603B1F335DC800875CDC /* LunchFree.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
+                222C656220EA5ADD002C281D /* UserSettingTableViewCells */ = {
+                        isa = PBXGroup;
+                        children = (
+                                22012D991F5AF92E00FE9214 /* LunchCalendarTableViewCell.swift */,
+                                221898B51F3440DC00A89F91 /* UserProfilePicTableViewCell.swift */,
+                                221898B61F3440DC00A89F91 /* UserProfilePicTableViewCell.xib */,
+                                221898B91F34458400A89F91 /* UserProfileItemTableViewCell.swift */,
+                                221898BA1F34458400A89F91 /* UserProfileItemTableViewCell.xib */,
+                                221ADCB51F3994300094884E /* profileSettingWithDetailCell.swift */,
+                        );
+                        path = UserSettingTableViewCells;
+                        sourceTree = "<group>";
+                };
+                A84EC1A47D924FD2AAD1D8F2 /* LunchFreeTests */ = {
+                        isa = PBXGroup;
+                        children = (
+                                75607D5A62BE4357A21AB0CA /* SearchViewControllerTests.swift */,
+                                329DA9C40DE444EDA7991E76 /* Info.plist */,
+                        );
+                        path = LunchFreeTests;
+                        sourceTree = "<group>";
+                };
+                225760321F335DC800875CDC = {
+                        isa = PBXGroup;
+                        children = (
+                                2257603D1F335DC800875CDC /* LunchFree */,
+                                2257603C1F335DC800875CDC /* Products */,
+                                221ADCA81F385EB70094884E /* Frameworks */,
+                                954D154ED726A713C6AD5991 /* Pods */,
+                                A84EC1A47D924FD2AAD1D8F2 /* LunchFreeTests */,
+                        );
+                        sourceTree = "<group>";
+                };
+                2257603C1F335DC800875CDC /* Products */ = {
+                        isa = PBXGroup;
+                        children = (
+                                2257603B1F335DC800875CDC /* LunchFree.app */,
+                                A511C618483441EF94284333 /* LunchFreeTests.xctest */,
+                        );
+                        name = Products;
+                        sourceTree = "<group>";
+                };
 		2257603D1F335DC800875CDC /* LunchFree */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,26 +495,43 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2257603A1F335DC800875CDC /* LunchFree */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2257604F1F335DC800875CDC /* Build configuration list for PBXNativeTarget "LunchFree" */;
-			buildPhases = (
-				7C4507118806ABEE7A764096 /* [CP] Check Pods Manifest.lock */,
-				225760371F335DC800875CDC /* Sources */,
-				225760381F335DC800875CDC /* Frameworks */,
-				225760391F335DC800875CDC /* Resources */,
-				3FDC616208955610B07C8F78 /* [CP] Embed Pods Frameworks */,
-				3D00864E2F3F46C0E5E1DBD3 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LunchFree;
-			productName = LunchFree;
-			productReference = 2257603B1F335DC800875CDC /* LunchFree.app */;
-			productType = "com.apple.product-type.application";
-		};
+                2257603A1F335DC800875CDC /* LunchFree */ = {
+                        isa = PBXNativeTarget;
+                        buildConfigurationList = 2257604F1F335DC800875CDC /* Build configuration list for PBXNativeTarget "LunchFree" */;
+                        buildPhases = (
+                                7C4507118806ABEE7A764096 /* [CP] Check Pods Manifest.lock */,
+                                225760371F335DC800875CDC /* Sources */,
+                                225760381F335DC800875CDC /* Frameworks */,
+                                225760391F335DC800875CDC /* Resources */,
+                                3FDC616208955610B07C8F78 /* [CP] Embed Pods Frameworks */,
+                                3D00864E2F3F46C0E5E1DBD3 /* [CP] Copy Pods Resources */,
+                        );
+                        buildRules = (
+                        );
+                        dependencies = (
+                        );
+                        name = LunchFree;
+                        productName = LunchFree;
+                        productReference = 2257603B1F335DC800875CDC /* LunchFree.app */;
+                        productType = "com.apple.product-type.application";
+                };
+                5041989F37FA4A339882591B /* LunchFreeTests */ = {
+                        isa = PBXNativeTarget;
+                        buildConfigurationList = 07AD97E5189948A7BE1730A4 /* Build configuration list for PBXNativeTarget "LunchFreeTests" */;
+                        buildPhases = (
+                                3AFC0484C06741B6B8C1C47D /* Sources */,
+                                FAA5C1C8E47E4C328AA021FA /* Frameworks */,
+                                A1FF649D1C7349B9861148DE /* Resources */,
+                        );
+                        buildRules = (
+                        );
+                        dependencies = (
+                        );
+                        name = LunchFreeTests;
+                        productName = LunchFreeTests;
+                        productReference = A511C618483441EF94284333 /* LunchFreeTests.xctest */;
+                        productType = "com.apple.product-type.bundle.unit-test";
+                };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -499,18 +541,22 @@
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Eddy Chan";
-				TargetAttributes = {
-					2257603A1F335DC800875CDC = {
-						CreatedOnToolsVersion = 8.3.3;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.Maps.iOS = {
-								enabled = 1;
-							};
-						};
-					};
-				};
+                                TargetAttributes = {
+                                        2257603A1F335DC800875CDC = {
+                                                CreatedOnToolsVersion = 8.3.3;
+                                                LastSwiftMigration = 0900;
+                                                ProvisioningStyle = Automatic;
+                                                SystemCapabilities = {
+                                                        com.apple.Maps.iOS = {
+                                                                enabled = 1;
+                                                        };
+                                                };
+                                        };
+                                        5041989F37FA4A339882591B = {
+                                                CreatedOnToolsVersion = 8.3.3;
+                                                TestTargetID = 2257603A1F335DC800875CDC;
+                                        };
+                                };
 			};
 			buildConfigurationList = 225760361F335DC800875CDC /* Build configuration list for PBXProject "LunchFree" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -530,10 +576,11 @@
 				},
 			);
 			projectRoot = "";
-			targets = (
-				2257603A1F335DC800875CDC /* LunchFree */,
-			);
-		};
+                        targets = (
+                                2257603A1F335DC800875CDC /* LunchFree */,
+                                5041989F37FA4A339882591B /* LunchFreeTests */,
+                        );
+                };
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
@@ -722,19 +769,27 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		225760391F335DC800875CDC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				221898BC1F34458400A89F91 /* UserProfileItemTableViewCell.xib in Resources */,
-				225760771F33682B00875CDC /* LaunchScreen.storyboard in Resources */,
-				225760481F335DC800875CDC /* Assets.xcassets in Resources */,
-				225760461F335DC800875CDC /* Main.storyboard in Resources */,
-				221898B81F3440DC00A89F91 /* UserProfilePicTableViewCell.xib in Resources */,
-				227AE2FA201A34050002490E /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+                225760391F335DC800875CDC /* Resources */ = {
+                        isa = PBXResourcesBuildPhase;
+                        buildActionMask = 2147483647;
+                        files = (
+                                221898BC1F34458400A89F91 /* UserProfileItemTableViewCell.xib in Resources */,
+                                225760771F33682B00875CDC /* LaunchScreen.storyboard in Resources */,
+                                225760481F335DC800875CDC /* Assets.xcassets in Resources */,
+                                225760461F335DC800875CDC /* Main.storyboard in Resources */,
+                                221898B81F3440DC00A89F91 /* UserProfilePicTableViewCell.xib in Resources */,
+                                227AE2FA201A34050002490E /* GoogleService-Info.plist in Resources */,
+                        );
+                        runOnlyForDeploymentPostprocessing = 0;
+                };
+                A1FF649D1C7349B9861148DE /* Resources */ = {
+                        isa = PBXResourcesBuildPhase;
+                        buildActionMask = 2147483647;
+                        files = (
+                                556677C3795D4C54A3222B69 /* Info.plist in Resources */,
+                        );
+                        runOnlyForDeploymentPostprocessing = 0;
+                };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -839,10 +894,10 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		225760371F335DC800875CDC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+                225760371F335DC800875CDC /* Sources */ = {
+                        isa = PBXSourcesBuildPhase;
+                        buildActionMask = 2147483647;
+                        files = (
 				227AFC471F62C0B400297D09 /* ProfileEditingViewController.swift in Sources */,
 				2241C4841F5D4D940021DDE2 /* LunchOptionCollectionViewCell.swift in Sources */,
 				225760431F335DC800875CDC /* SearchViewController.swift in Sources */,
@@ -868,7 +923,15 @@
 				2295A6BC1F4ED48400447209 /* OrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-		};
+                };
+                3AFC0484C06741B6B8C1C47D /* Sources */ = {
+                        isa = PBXSourcesBuildPhase;
+                        buildActionMask = 2147483647;
+                        files = (
+                                9351E94A00D64F8CB605B785 /* SearchViewControllerTests.swift in Sources */,
+                        );
+                        runOnlyForDeploymentPostprocessing = 0;
+                };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -1018,25 +1081,61 @@
 			};
 			name = Debug;
 		};
-		225760511F335DC800875CDC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB71A98B63E254F0210C9123 /* Pods-LunchFree.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/LunchFree",
-				);
-				INFOPLIST_FILE = LunchFree/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.testing.LunchFree;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
+                225760511F335DC800875CDC /* Release */ = {
+                        isa = XCBuildConfiguration;
+                        baseConfigurationReference = FB71A98B63E254F0210C9123 /* Pods-LunchFree.release.xcconfig */;
+                        buildSettings = {
+                                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                                FRAMEWORK_SEARCH_PATHS = (
+                                        "$(inherited)",
+                                        "$(PROJECT_DIR)/LunchFree",
+                                );
+                                INFOPLIST_FILE = LunchFree/Info.plist;
+                                LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+                                PRODUCT_BUNDLE_IDENTIFIER = com.testing.LunchFree;
+                                PRODUCT_NAME = "$(TARGET_NAME)";
+                                SWIFT_SWIFT3_OBJC_INFERENCE = On;
+                                SWIFT_VERSION = 4.0;
+                                TARGETED_DEVICE_FAMILY = 1;
+                        };
+                        name = Release;
+                };
+                DDDDFF070F1F489F96BBA992 /* Debug */ = {
+                        isa = XCBuildConfiguration;
+                        buildSettings = {
+                                FRAMEWORK_SEARCH_PATHS = (
+                                        "$(inherited)",
+                                        "$(PROJECT_DIR)/LunchFree",
+                                );
+                                INFOPLIST_FILE = LunchFreeTests/Info.plist;
+                                LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks";
+                                PRODUCT_BUNDLE_IDENTIFIER = com.testing.LunchFreeTests;
+                                PRODUCT_NAME = "$(TARGET_NAME)";
+                                SWIFT_VERSION = 4.0;
+                                TARGETED_DEVICE_FAMILY = 1;
+                                TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LunchFree.app/LunchFree";
+                                BUNDLE_LOADER = "$(TEST_HOST)";
+                        };
+                        name = Debug;
+                };
+                42746617B23048DB8217D513 /* Release */ = {
+                        isa = XCBuildConfiguration;
+                        buildSettings = {
+                                FRAMEWORK_SEARCH_PATHS = (
+                                        "$(inherited)",
+                                        "$(PROJECT_DIR)/LunchFree",
+                                );
+                                INFOPLIST_FILE = LunchFreeTests/Info.plist;
+                                LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks @executable_path/Frameworks";
+                                PRODUCT_BUNDLE_IDENTIFIER = com.testing.LunchFreeTests;
+                                PRODUCT_NAME = "$(TARGET_NAME)";
+                                SWIFT_VERSION = 4.0;
+                                TARGETED_DEVICE_FAMILY = 1;
+                                TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LunchFree.app/LunchFree";
+                                BUNDLE_LOADER = "$(TEST_HOST)";
+                        };
+                        name = Release;
+                };
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1049,15 +1148,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2257604F1F335DC800875CDC /* Build configuration list for PBXNativeTarget "LunchFree" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				225760501F335DC800875CDC /* Debug */,
-				225760511F335DC800875CDC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
+                2257604F1F335DC800875CDC /* Build configuration list for PBXNativeTarget "LunchFree" */ = {
+                        isa = XCConfigurationList;
+                        buildConfigurations = (
+                                225760501F335DC800875CDC /* Debug */,
+                                225760511F335DC800875CDC /* Release */,
+                        );
+                        defaultConfigurationIsVisible = 0;
+                        defaultConfigurationName = Release;
+                };
+                07AD97E5189948A7BE1730A4 /* Build configuration list for PBXNativeTarget "LunchFreeTests" */ = {
+                        isa = XCConfigurationList;
+                        buildConfigurations = (
+                                DDDDFF070F1F489F96BBA992 /* Debug */,
+                                42746617B23048DB8217D513 /* Release */,
+                        );
+                        defaultConfigurationIsVisible = 0;
+                        defaultConfigurationName = Release;
+                };
 /* End XCConfigurationList section */
 	};
 	rootObject = 225760331F335DC800875CDC /* Project object */;
