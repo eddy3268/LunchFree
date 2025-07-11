@@ -9,10 +9,12 @@
 import UIKit
 import Firebase
 import FirebaseUI
+import FirebaseMessaging
 import TwitterKit
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     
     var window: UIWindow?
     var user = [User]()
@@ -21,7 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         TWTRTwitter.sharedInstance().start(withConsumerKey:"", consumerSecret:"")
-        
+        UNUserNotificationCenter.current().delegate = self
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in }
+        application.registerForRemoteNotifications()
+        Messaging.messaging().delegate = self
+
         return true
     }
 
@@ -40,7 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if let user = Auth.auth().currentUser {
+            Firestore.firestore().collection("users").document(user.uid).getDocument { snapshot, _ in
+                if let data = snapshot?.data(), let lunch = data["lunchTime"] as? String, lunch != "" {
+                    NotificationManager.scheduleDailyLunchNotification(at: lunch)
+                }
+            }
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -55,6 +68,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         // other URL handling goes here.
         return false
+    }
+
+    // MARK: Remote Notification Delegates
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+    }
+
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        print("FCM registration token: \(fcmToken ?? "")")
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, .badge])
     }
 
 

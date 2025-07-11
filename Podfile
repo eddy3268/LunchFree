@@ -11,6 +11,7 @@ target 'LunchFree' do
   pod 'FirebaseUI/Auth'
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Messaging'
 
   pod 'FirebaseUI/Google'
   pod 'FirebaseUI/Facebook'
