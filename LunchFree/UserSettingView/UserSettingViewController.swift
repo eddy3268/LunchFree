@@ -94,6 +94,9 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
             self.userName = userData!["userName"] as? String ?? ""
             self.selectedPlanName = userData!["selectedPlanName"] as? String ?? ""
             self.lunchTimeData = userData!["lunchTime"] as? String ?? ""
+            if self.lunchTimeData != "" {
+                NotificationManager.scheduleDailyLunchNotification(at: self.lunchTimeData)
+            }
             self.tableView.reloadData()
         }
         //[END updating user data]
@@ -368,6 +371,7 @@ class UserSettingViewController: UITableViewController, UserProfilePicTableViewC
                 print ("User data has been saved")
             }
         })
+        NotificationManager.scheduleDailyLunchNotification(at: lunchTimeData)
         tableView.reloadData()
         
     }
